@@ -1,0 +1,40 @@
+.card {
+  height: 80vh;
+  border-radius: 20px;
+  margin: 0 5px;
+  flex: 1;
+  position: relative;
+  transition: flex 0.5s cubic-bezier(0.25, 0.5, 0.5, 0.95);
+  cursor: pointer;
+  overflow: hidden;
+
+  .background {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  }
+
+  h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 40px;
+    opacity: 0;
+    color: white;
+    transition: opacity 0.3s linear;
+    font-size: 50px;
+  }
+
+  &.active {
+    flex: 10;
+
+    h3 {
+      opacity: 1;
+    }
+
+    .background:hover {
+      transform: scale(1.1);
+    }
+  }
+}
